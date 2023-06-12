@@ -26,8 +26,6 @@ jobs:
   test:
     docker:
       - image: cimg/node:18.16.0
-    requires:
-      - hithere
     steps:
       - checkout
       - run: echo "testing stuff"
