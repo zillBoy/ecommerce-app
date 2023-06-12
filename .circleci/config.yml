@@ -17,6 +17,12 @@ jobs:
       - run: echo "npm installing"
       - run: npm install
       - run: CI=true npm run build
+  hithere: 
+    docker:
+      - image: cimg/node:18.16.0
+    steps:
+      - checkout
+      - run: echo "helllooooo!"
   test:
     docker:
       - image: cimg/node:18.16.0
@@ -27,12 +33,6 @@ jobs:
       - run: echo "testing stuff"
       - run: npm install
       - run: echo "ran npm test passed :)"
-  hithere: 
-    docker:
-      - image: cimg/node:18.16.0
-    steps:
-      - checkout
-      - run: echo "helllooooo!"
           
 
 # Orchestrate jobs using workflows
