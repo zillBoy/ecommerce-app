@@ -1,10 +1,14 @@
 // React Dependencies
 import React from 'react'
 
+// Internal Dependencies
+import { Navbar } from '@/components/Navbar/Navbar'
+
 const HomePage = () => {
   return (
     <div>
-      <h1>Home Page</h1>
+      {/* Navbar */}
+      <Navbar />
     </div>
   )
 }
