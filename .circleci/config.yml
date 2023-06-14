@@ -23,6 +23,7 @@ jobs:
     steps:
       - checkout
       - run: echo "running test cases"
+      - run: npm install # installs all dependencies, including devDependencies
       - run: npm test
 
 # Orchestrate jobs using workflows
