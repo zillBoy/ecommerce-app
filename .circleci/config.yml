@@ -17,21 +17,13 @@ jobs:
       - run: echo "npm installing"
       - run: npm install
       - run: CI=true npm run build
-  hithere: 
-    docker:
-      - image: cimg/node:18.16.0
-    steps:
-      - checkout
-      - run: echo "helllooooo!"
   test:
     docker:
       - image: cimg/node:18.16.0
     steps:
       - checkout
-      - run: echo "testing stuff"
-      - run: npm install
-      - run: echo "ran npm test passed :)"
-          
+      - run: echo "running test cases"
+      - run: npm test
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
@@ -39,6 +31,5 @@ workflows:
   build_test_and_lint:
     jobs:
       - build
-      - hithere
       - test
 
