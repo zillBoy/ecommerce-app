@@ -7,8 +7,8 @@ import { Heading } from "../common/Heading/Heading";
 
 export const Navbar = () => {
   return (
-    <nav className="flex items-center justify-between mx-20 my-12">
-      <Heading text="Artopia" color="white" />
+    <nav className="relative z-10 flex items-center justify-between mx-20 my-12 bg-transparent">
+      <Heading text="Artopia" color="white" className="bg-transparent" />
       <Button text="Sign In" color="white" />
     </nav>
   );

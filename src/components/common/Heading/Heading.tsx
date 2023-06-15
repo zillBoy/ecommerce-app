@@ -8,6 +8,7 @@ type Props = {
   text: string;
   variant: "mainHeading" | "heading" | "subHeading";
   color: "white" | "black";
+  className: string;
 };
 
 const heading = tv({
@@ -25,11 +26,16 @@ const heading = tv({
   },
 });
 
-export const Heading = ({ text, variant, color }: Props) => {
-  return <h1 className={heading({ type: variant, color })}>{text}</h1>;
+export const Heading = ({ text, variant, color, className }: Props) => {
+  return (
+    <h1 className={heading({ type: variant, color, class: className })}>
+      {text}
+    </h1>
+  );
 };
 
 Heading.defaultProps = {
   variant: "heading",
   color: "black",
+  className: "",
 };
