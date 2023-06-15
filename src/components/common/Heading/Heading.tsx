@@ -6,7 +6,8 @@ import { tv } from "tailwind-variants";
 
 type Props = {
   text: string;
-  variant: string;
+  variant: "mainHeading" | "heading" | "subHeading";
+  color: "white" | "black";
 };
 
 const heading = tv({
@@ -17,11 +18,15 @@ const heading = tv({
       heading: "",
       subHeading: "",
     },
+    color: {
+      white: "text-white",
+      black: "text-black",
+    },
   },
 });
 
-export const Heading = ({ text, variant }: Props) => {
-  return <h1 className={heading({ type: variant })}>{text}</h1>;
+export const Heading = ({ text, variant, color }: Props) => {
+  return <h1 className={heading({ type: variant, color })}>{text}</h1>;
 };
 
 Heading.defaultProps = {
