@@ -23,7 +23,27 @@ module.exports = {
         primary: "#A259FF",
       },
       fontSize: {
+        "3.5xl": "32px",
         "4.5xl": "40px",
+        "8.5xl": "112px",
+      },
+      width: {
+        67.5: "270px",
+      },
+      minWidth: {
+        67.5: "270px",
+      },
+      maxWidth: {
+        67.5: "270px",
+      },
+      height: {
+        140: "560px",
+      },
+      minHeight: {
+        140: "560px",
+      },
+      maxHeight: {
+        140: "560px",
       },
     },
   },
