@@ -30,7 +30,7 @@ describe("HeroSection", () => {
   it("displays 2 hero images", () => {
     render(<HeroSection />);
 
-    const images = screen.getAllByRole("img");
+    const images = screen.getAllByAltText("hero-image");
     expect(images).toHaveLength(2);
   });
 });

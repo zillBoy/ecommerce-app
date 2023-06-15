@@ -10,13 +10,17 @@ import { Button } from "../common/Button/Button";
 import { NumericInfoCard } from "../common/InfoCard/NumericInfoCard";
 import { Typography } from "../common/Typography/Typography";
 
-import HeroSectionCurve from "@public/assets/svg/hero-section-curve.svg";
-
 export const HeroSection = () => {
   return (
     <>
       <div className="absolute top-0 h-screen bg-secondary w-96" />
-      <HeroSectionCurve className="absolute bottom-0 bg-transparent" />
+      <Image
+        src="assets/svg/hero-section-curve.svg"
+        width={100}
+        height={100}
+        className="absolute bottom-0 bg-transparent"
+        alt="hero section curve"
+      />
 
       <div role="herosection" className="relative flex items-start mx-36">
         <div className="flex items-center gap-5">
