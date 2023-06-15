@@ -1,19 +1,23 @@
 // External Dependencies
-import { render, screen } from '@testing-library/react'
-import '@testing-library/jest-dom'
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
 
 // Internal Dependencies
-import HomePage from '@/pages/index'
-import { Navbar } from '@/components/Navbar/Navbar'
+import HomePage from "@/pages/index";
 
-describe('Home', () => {
-  it('shows the Navbar component', () => {
-    render(<HomePage />)
-    const navbar = screen.getByRole('navigation')
-    expect(navbar).toBeInTheDocument()
-  })
-  
-  // 2. Heading, paragraph and 2 images showing
+describe("Home", () => {
+  it("displays the Navbar component", () => {
+    render(<HomePage />);
+    const navbar = screen.getByRole("navigation");
+    expect(navbar).toBeInTheDocument();
+  });
+
+  it("displays the HeroSection component", () => {
+    render(<HomePage />);
+    const heroSection = screen.getByRole("herosection");
+    expect(heroSection).toBeInTheDocument();
+  });
+
   // 3. Partners component showing
   // 4. Headline section with download-able image cards showing
   // 5. Headline section with top creators showing
@@ -25,4 +29,4 @@ describe('Home', () => {
   // 11. Subscribe for email
   // 12. Footer showing
   // 13. All rights reserved
-})
+});

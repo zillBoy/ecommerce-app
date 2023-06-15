@@ -13,7 +13,7 @@ const heading = tv({
   base: "text-4.5xl leading-9",
   variants: {
     type: {
-      mainHeading: "",
+      mainHeading: "font-semibold text-8.5xl leading-none",
       heading: "",
       subHeading: "",
     },

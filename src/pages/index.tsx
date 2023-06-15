@@ -1,16 +1,17 @@
 // React Dependencies
-import React from 'react'
+import React from "react";
 
 // Internal Dependencies
-import { Navbar } from '@/components/Navbar/Navbar'
+import { Navbar } from "@/components/Navbar/Navbar";
+import { HeroSection } from "@/components/Section/HeroSection";
 
 const HomePage = () => {
   return (
     <div>
-      {/* Navbar */}
       <Navbar />
+      <HeroSection />
     </div>
-  )
-}
+  );
+};
 
-export default HomePage
+export default HomePage;

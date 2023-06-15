@@ -9,7 +9,7 @@ export const Navbar = () => {
   return (
     <nav className="flex items-center justify-between mx-20 my-12">
       <Heading text="Artopia" />
-      <Button text="Sign In" />
+      <Button text="Sign In" color="white" />
     </nav>
   );
 };

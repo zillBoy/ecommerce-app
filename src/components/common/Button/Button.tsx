@@ -6,32 +6,40 @@ import { tv } from "tailwind-variants";
 
 type Props = {
   text: string;
-  variant: string;
+  variant: "text" | "contained" | "outline";
+  color: "white" | "black";
+  className: string;
 };
 
 const button = tv({
-  base: "bg-primary text-white border border-primary",
+  base: "text-base bg-primary text-white border border-primary",
   variants: {
     type: {
-      contained: "bg-primary text-white hover:bg-primaryDark",
-      outline: "bg-transparent text-primary",
+      text: "text-xl bg-transparent border-0 p-0 font-bold",
+      contained: "bg-primary text-white px-10 py-3 hover:bg-primaryDark",
+      outline: "bg-transparent text-primary px-10 py-3",
+    },
+    color: {
+      white: "text-white",
+      black: "text-black",
     },
   },
-  compoundVariants: [
-    {
-      class: "text-base px-10 py-3",
-    },
-  ],
   defaultVariants: {
-    size: "md",
-    color: "primary",
+    variant: "contained",
+    color: "black",
   },
 });
 
-export const Button = ({ text, variant }: Props) => {
-  return <button className={button({ type: variant })}>{text}</button>;
+export const Button = ({ text, variant, color, className }: Props) => {
+  return (
+    <button className={button({ type: variant, color, class: className })}>
+      {text}
+    </button>
+  );
 };
 
 Button.defaultProps = {
   variant: "contained",
+  color: "black",
+  className: "",
 };
