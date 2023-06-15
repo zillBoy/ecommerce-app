@@ -15,6 +15,7 @@ module.exports = {
       backgroundColor: {
         primary: "#A259FF",
         primaryDark: "#984FE1",
+        neutralDark: "#121212",
       },
       textColor: {
         primary: "#A259FF",
