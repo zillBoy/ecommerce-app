@@ -30,17 +30,26 @@ export const HeroSection = () => {
         />
       </div>
       <div className="ml-10">
-        <Heading variant="mainHeading" text="Buy and Sell Digital Arts" />
+        <Heading
+          variant="mainHeading"
+          text="Buy and Sell Digital Arts"
+          color="white"
+        />
         <Typography
           className="mt-11"
           text="The world’s largest online marketplace of online digital art"
+          color="white"
         />
-        <Button className="my-11" variant="text" color="black" text="Explore" />
+        <Button className="my-11" variant="text" color="white" text="Explore" />
 
         <div className="flex items-start gap-14">
-          <NumericInfoCard number="999,000" text="Digital art file" />
-          <NumericInfoCard number="2000" text="Art Seller" />
-          <NumericInfoCard number="10,000" text="Buyer" />
+          <NumericInfoCard
+            number="999,000"
+            text="Digital art file"
+            color="white"
+          />
+          <NumericInfoCard number="2000" text="Art Seller" color="white" />
+          <NumericInfoCard number="10,000" text="Buyer" color="white" />
         </div>
       </div>
     </div>

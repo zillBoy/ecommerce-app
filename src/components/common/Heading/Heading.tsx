@@ -31,4 +31,5 @@ export const Heading = ({ text, variant, color }: Props) => {
 
 Heading.defaultProps = {
   variant: "heading",
+  color: "black",
 };
