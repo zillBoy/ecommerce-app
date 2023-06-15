@@ -14,12 +14,16 @@ module.exports = {
       },
       backgroundColor: {
         primary: "#A259FF",
+        primaryDark: "#984FE1",
       },
       textColor: {
         primary: "#A259FF",
       },
       borderColor: {
         primary: "#A259FF",
+      },
+      fontSize: {
+        "4.5xl": "40px",
       },
     },
   },
