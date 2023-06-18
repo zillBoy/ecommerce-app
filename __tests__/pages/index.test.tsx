@@ -4,6 +4,7 @@ import "@testing-library/jest-dom";
 
 // Internal Dependencies
 import HomePage from "@/pages/index";
+import { PartnerSection } from "@/components/Section/PartnerSection";
 
 describe("Home", () => {
   it("displays the Navbar component", () => {
@@ -16,6 +17,12 @@ describe("Home", () => {
     render(<HomePage />);
     const heroSection = screen.getByRole("herosection");
     expect(heroSection).toBeInTheDocument();
+  });
+
+  it("displays the PartnerSection component", () => {
+    render(<PartnerSection />);
+    const partnerSection = screen.getByRole("partnerSection");
+    expect(partnerSection).toBeInTheDocument();
   });
 
   // 3. Partners component showing
