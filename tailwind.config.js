@@ -47,6 +47,9 @@ module.exports = {
       maxHeight: {
         140: "560px",
       },
+      margin: {
+        18: "72px",
+      },
     },
   },
   plugins: [],
