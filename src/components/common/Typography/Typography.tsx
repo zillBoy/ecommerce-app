@@ -6,7 +6,12 @@ import { tv } from "tailwind-variants";
 
 type Props = {
   text: string;
-  variant: "mainParagraph" | "paragraph" | "subParagraph";
+  variant:
+    | "mainParagraph"
+    | "paragraph"
+    | "subParagraph"
+    | "caption"
+    | "footnode";
   color: "white" | "black";
   className: string;
 };
@@ -18,6 +23,8 @@ const paragraph = tv({
       mainParagraph: "text-3.5xl font-semibold",
       paragraph: "",
       subParagraph: "text-xl font-medium",
+      caption: "text-1.5xl font-light",
+      footnode: "",
     },
     color: {
       white: "text-white",
@@ -29,7 +36,7 @@ const paragraph = tv({
 export const Typography = ({ text, variant, color, className }: Props) => {
   return (
     <p
-      role={variant}
+      role="typoParagraph"
       className={paragraph({ type: variant, color, class: className })}
     >
       {text}
