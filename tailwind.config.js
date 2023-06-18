@@ -25,6 +25,7 @@ module.exports = {
         primary: "#A259FF",
       },
       fontSize: {
+        "1.5xl": "22px",
         "3.5xl": "32px",
         "4.5xl": "40px",
         "8.5xl": "112px",
