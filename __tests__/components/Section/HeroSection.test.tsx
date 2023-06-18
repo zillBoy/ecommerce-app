@@ -10,7 +10,9 @@ describe("HeroSection", () => {
     render(<HeroSection />);
 
     const heading = screen.getByRole("heading");
-    const paragraph = screen.getByRole("paragraph");
+    const paragraph = screen.getByText(
+      "The world’s largest online marketplace of online digital art"
+    );
     const button = screen.getByRole("button", {
       name: "Explore",
     });
@@ -18,6 +20,7 @@ describe("HeroSection", () => {
     expect(heading).toBeInTheDocument();
     expect(paragraph).toBeInTheDocument();
     expect(button).toBeInTheDocument();
+    expect(1).toBe(1);
   });
 
   it("displays 3 NumericInfoCard component", () => {
