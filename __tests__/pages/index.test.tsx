@@ -5,6 +5,7 @@ import "@testing-library/jest-dom";
 // Internal Dependencies
 import HomePage from "@/pages/index";
 import { PartnerSection } from "@/components/Section/PartnerSection";
+import { ContentSection } from "@/components/Section/ContentSection";
 
 describe("Home", () => {
   it("displays the Navbar component", () => {
@@ -23,6 +24,18 @@ describe("Home", () => {
     render(<PartnerSection />);
     const partnerSection = screen.getByRole("partnerSection");
     expect(partnerSection).toBeInTheDocument();
+  });
+
+  it("displays the ContentSection component", () => {
+    const props = {
+      role: "contentSection",
+      heading: "Heading",
+      paragraph: "some test content",
+    };
+
+    render(<ContentSection {...props} />);
+    const contentSection = screen.getByRole("contentSection");
+    expect(contentSection).toBeInTheDocument();
   });
 
   // 3. Partners component showing
