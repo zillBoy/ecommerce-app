@@ -7,7 +7,7 @@ import Image from "next/image";
 // Internal Dependencies
 import { Heading } from "../common/Heading/Heading";
 import { Button } from "../common/Button/Button";
-import { NumericInfoCard } from "../common/InfoCard/NumericInfoCard";
+import { NumericInfoCard } from "../common/Card/NumericInfoCard";
 import { Typography } from "../common/Typography/Typography";
 
 export const HeroSection = () => {
