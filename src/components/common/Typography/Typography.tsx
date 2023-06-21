@@ -10,6 +10,7 @@ type Props = {
     | "mainParagraph"
     | "paragraph"
     | "subParagraph"
+    | "triParagraph"
     | "caption"
     | "footnode";
   color: "white" | "black";
@@ -21,10 +22,11 @@ const paragraph = tv({
   variants: {
     type: {
       mainParagraph: "text-3.5xl font-semibold",
-      paragraph: "",
+      paragraph: "text-1.5xl font-bold",
       subParagraph: "text-xl font-medium",
+      triParagraph: "text-lg font-medium",
       caption: "text-1.5xl font-light",
-      footnode: "",
+      footnode: "text-base font-medium",
     },
     color: {
       white: "text-white",
