@@ -1,13 +1,31 @@
 // React Dependencies
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // Internal Dependencies
 import { Navbar } from "@/components/Navbar/Navbar";
 import { HeroSection } from "@/components/Section/HeroSection";
 import { PartnerSection } from "@/components/Section/PartnerSection";
 import { ContentSection } from "@/components/Section/ContentSection";
+import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
 
 const HomePage = () => {
+  const [featuredProducts, setFeaturedProducts] = useState([]);
+
+  const fetchFeaturedProducts = async () => {
+    try {
+      const response = await fetch("/api/featuredProducts");
+      const { products } = await response.json();
+
+      setFeaturedProducts(products);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchFeaturedProducts();
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -20,6 +38,9 @@ const HomePage = () => {
           heading="Trending Sales"
           paragraph="Checkout our weekly updated trending sales"
         />
+        {featuredProducts.length > 0 && (
+          <FeaturedProducts products={featuredProducts} />
+        )}
       </div>
     </div>
   );
