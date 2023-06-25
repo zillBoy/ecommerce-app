@@ -1,6 +1,9 @@
 // React Dependencies
 import React, { useState, useEffect } from "react";
 
+// External Dependencies
+import axios from "axios";
+
 // Internal Dependencies
 import { Navbar } from "@/components/Navbar/Navbar";
 import { HeroSection } from "@/components/Section/HeroSection";
@@ -13,8 +16,8 @@ const HomePage = () => {
 
   const fetchFeaturedProducts = async () => {
     try {
-      const response = await fetch("/api/featuredProducts");
-      const { products } = await response.json();
+      const response = await axios("/api/featuredProducts");
+      const { products } = response.data;
 
       setFeaturedProducts(products);
     } catch (err) {

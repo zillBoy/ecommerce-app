@@ -16,38 +16,6 @@ describe("/api/featuredProducts API Endpoint", () => {
     return { req, res };
   }
 
-  //   {
-  //     id: 1,
-  //     image: "/assets/images/product-image.png",
-  //     title: "Test Product 1",
-  //     price: 12.22,
-  //     creator: {
-  //       image: "/assets/images/creator-image.png",
-  //       name: "Da Viper",
-  //     },
-  //   },
-  //   {
-  //     id: 2,
-  //     image: "/assets/images/product-image.png",
-  //     title: "Test Product 2",
-  //     price: 4.25,
-  //     creator: {
-  //       image: "/assets/images/creator-image.png",
-  //       name: "Bear",
-  //     },
-  //   },
-  //   {
-  //     id: 3,
-  //     image: "/assets/images/product-image.png",
-  //     title: "Test Product 3",
-  //     price: 14.25,
-  //     creator: {
-  //       image: "/assets/images/creator-image.png",
-  //       name: "Viking",
-  //     },
-  //   },
-  // ];
-
   it("returns a successful response from /featuredProducts API Endpoint", async () => {
     const { req, res } = mockRequestResponse();
     await featuredProducts(req, res);
