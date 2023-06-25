@@ -18,7 +18,6 @@ const HomePage = () => {
     try {
       const response = await axios("/api/featuredProducts");
       const { products } = response.data;
-
       setFeaturedProducts(products);
     } catch (err) {
       console.log(err);
