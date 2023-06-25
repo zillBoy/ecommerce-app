@@ -1,22 +1,24 @@
-// External Dependencies
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 // Internal Dependencies
 import HomePage from "@/pages/index";
 import { PartnerSection } from "@/components/Section/PartnerSection";
 import { ContentSection } from "@/components/Section/ContentSection";
+import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
+
+import featuredProducts from "@/pages/api/featuredProducts";
 
 describe("Home", () => {
-  it("displays the Navbar component", () => {
+  it("displays the Navbar component", async () => {
     render(<HomePage />);
-    const navbar = screen.getByRole("navigation");
+    const navbar = await screen.findByRole("navigation");
     expect(navbar).toBeInTheDocument();
   });
 
-  it("displays the HeroSection component", () => {
+  it("displays the HeroSection component", async () => {
     render(<HomePage />);
-    const heroSection = screen.getByRole("herosection");
+    const heroSection = await screen.findByRole("herosection");
     expect(heroSection).toBeInTheDocument();
   });
 
@@ -36,6 +38,12 @@ describe("Home", () => {
     render(<ContentSection {...props} />);
     const contentSection = screen.getByRole("contentSection");
     expect(contentSection).toBeInTheDocument();
+  });
+
+  it("displays the FeaturedProducts component inside home-page", async () => {
+    render(<HomePage />);
+    const featuredProducts = await screen.findAllByRole("product-card");
+    expect(featuredProducts).toHaveLength(2);
   });
 
   // 3. Partners component showing

@@ -17,12 +17,21 @@ module.exports = {
         primaryDark: "#984FE1",
         secondary: "#321C4F",
         neutralDark: "#121212",
+        gray: "#b0b0b0",
       },
       textColor: {
         primary: "#A259FF",
+        primaryDark: "#984FE1",
+        secondary: "#321C4F",
+        neutralDark: "#121212",
+        gray: "#b0b0b0",
       },
       borderColor: {
         primary: "#A259FF",
+        primaryDark: "#984FE1",
+        secondary: "#321C4F",
+        neutralDark: "#121212",
+        gray: "#b0b0b0",
       },
       fontSize: {
         "1.5xl": "22px",
@@ -31,21 +40,33 @@ module.exports = {
         "8.5xl": "112px",
       },
       width: {
+        75: "300px",
         67.5: "270px",
+        100: "400px",
+        "1/3.5": "28.571428571%",
       },
       minWidth: {
+        75: "300px",
         67.5: "270px",
+        100: "400px",
+        "1/3.5": "28.571428571%",
       },
       maxWidth: {
+        75: "300px",
         67.5: "270px",
+        100: "400px",
+        "1/3.5": "28.571428571%",
       },
       height: {
+        100: "400px",
         140: "560px",
       },
       minHeight: {
+        100: "400px",
         140: "560px",
       },
       maxHeight: {
+        100: "400px",
         140: "560px",
       },
       margin: {
