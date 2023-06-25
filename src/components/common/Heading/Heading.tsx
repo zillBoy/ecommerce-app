@@ -17,7 +17,7 @@ const heading = tv({
     type: {
       mainHeading: "font-semibold text-8.5xl leading-none",
       subMainHeading: "font-semibold text-4.5xl md:text-5xl",
-      heading: "",
+      heading: "text-3xl md:text-4.5xl",
       subHeading: "",
     },
     color: {
