@@ -8,12 +8,13 @@ type Props = {
   text: string;
   variant:
     | "mainParagraph"
+    | "mainSubParagraph"
     | "paragraph"
     | "subParagraph"
     | "triParagraph"
     | "caption"
     | "footnode";
-  color: "white" | "black";
+  color: "white" | "black" | "lightGray";
   className: string;
 };
 
@@ -22,6 +23,7 @@ const paragraph = tv({
   variants: {
     type: {
       mainParagraph: "text-3.5xl font-semibold",
+      mainSubParagraph: "text-2.5xl font-semibold",
       paragraph: "text-1.5xl font-bold",
       subParagraph: "text-xl font-medium",
       triParagraph: "text-lg font-medium",
@@ -31,6 +33,7 @@ const paragraph = tv({
     color: {
       white: "text-white",
       black: "text-black",
+      lightGray: "text-lightGray",
     },
   },
 });

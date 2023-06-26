@@ -10,15 +10,26 @@ import { HeroSection } from "@/components/Section/HeroSection";
 import { PartnerSection } from "@/components/Section/PartnerSection";
 import { ContentSection } from "@/components/Section/ContentSection";
 import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
+import { CreatorCard } from "@/components/common/Card/CreatorCard";
 
 const HomePage = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [featuredCreators, setFeaturedCreators] = useState([]);
 
   const fetchFeaturedProducts = async () => {
     try {
       const response = await axios("/api/featuredProducts");
       const { products } = response.data;
       setFeaturedProducts(products);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const fetchFeaturedCreators = async () => {
+    try {
+      const response = await axios("/api/featuredCreators");
+      const {} = response.data;
     } catch (err) {
       console.log(err);
     }
@@ -53,6 +64,12 @@ const HomePage = () => {
           headingVariant="heading"
           headingClassName="font-semibold"
           btnText="View Rankings"
+        />
+        <CreatorCard
+          image="/assets/images/creator-image-1.png"
+          name="Keepitreal"
+          totalSales={34500}
+          cardNum={1}
         />
       </div>
     </div>
