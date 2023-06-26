@@ -38,7 +38,7 @@ export const Button = ({ text, variant, color, icon, className }: Props) => {
       className={button({
         type: variant,
         color,
-        class: `${icon?.length !== 0 ? "flex" : ""} ${className}`,
+        class: `${icon?.length !== 0 ? "flex items-center" : ""} ${className}`,
       })}
     >
       {icon && (
