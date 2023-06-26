@@ -39,10 +39,21 @@ const HomePage = () => {
           role="trendingSalesSection"
           heading="Trending Sales"
           paragraph="Checkout our weekly updated trending sales"
+          headingVariant="subMainHeading"
         />
         {featuredProducts.length > 0 && (
           <FeaturedProducts products={featuredProducts} />
         )}
+
+        <ContentSection
+          role="topCreatorsSection"
+          heading="Top creators"
+          paragraph="Checkout Top Rated Creators on the NFT Marketplace"
+          className="items-end justify-between mt-40"
+          headingVariant="heading"
+          headingClassName="font-semibold"
+          btnText="View Rankings"
+        />
       </div>
     </div>
   );
