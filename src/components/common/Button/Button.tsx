@@ -1,4 +1,5 @@
 // React Dependencies
+import Image from "next/image";
 import React from "react";
 
 // External Dependencies
@@ -8,6 +9,7 @@ type Props = {
   text: string;
   variant: "text" | "contained" | "outline";
   color: "white" | "black";
+  icon?: string;
   className: string;
 };
 
@@ -30,9 +32,18 @@ const button = tv({
   },
 });
 
-export const Button = ({ text, variant, color, className }: Props) => {
+export const Button = ({ text, variant, color, icon, className }: Props) => {
   return (
-    <button className={button({ type: variant, color, class: className })}>
+    <button
+      className={button({
+        type: variant,
+        color,
+        class: `${icon?.length !== 0 ? "flex" : ""} ${className}`,
+      })}
+    >
+      {icon && (
+        <Image className="mr-3" src={icon} width={20} height={20} alt="icon" />
+      )}
       {text}
     </button>
   );
