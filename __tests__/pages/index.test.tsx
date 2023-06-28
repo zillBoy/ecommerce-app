@@ -3,11 +3,7 @@ import "@testing-library/jest-dom";
 
 // Internal Dependencies
 import HomePage from "@/pages/index";
-import { PartnerSection } from "@/components/Section/PartnerSection";
 import { ContentSection } from "@/components/Section/ContentSection";
-import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
-
-import featuredProducts from "@/pages/api/featuredProducts";
 
 describe("Home", () => {
   it("displays the Navbar component", async () => {
@@ -23,7 +19,7 @@ describe("Home", () => {
   });
 
   it("displays the PartnerSection component", () => {
-    render(<PartnerSection />);
+    render(<HomePage />);
     const partnerSection = screen.getByRole("partnerSection");
     expect(partnerSection).toBeInTheDocument();
   });
@@ -35,7 +31,7 @@ describe("Home", () => {
       paragraph: "some test content",
     };
 
-    render(<ContentSection {...props} />);
+    render(<ContentSection headingVariant="heading" {...props} />);
     const contentSection = screen.getByRole("contentSection");
     expect(contentSection).toBeInTheDocument();
   });
@@ -46,10 +42,12 @@ describe("Home", () => {
     expect(featuredProducts).toHaveLength(2);
   });
 
-  // 3. Partners component showing
-  // 4. Headline section with download-able image cards showing
-  // 5. Headline section with top creators showing
-  // 6. Artist Card Grid showing
+  it("displays the FeaturedCreators component inside home-page", async () => {
+    render(<HomePage />);
+    const featuredCreators = await screen.findAllByRole("creator-card");
+    expect(featuredCreators).toHaveLength(5);
+  });
+
   // 7. Section with text-content on left-side and images on the right-side
   // 8. Categories showing
   // 9. Digital art trending section
