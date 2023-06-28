@@ -62,6 +62,7 @@ const HomePage = () => {
 
       <div className="mx-10 md:mx-20">
         <PartnerSection />
+
         <ContentSection
           role="trendingSalesSection"
           heading="Trending Sales"
@@ -92,7 +93,6 @@ const HomePage = () => {
           headingVariant="heading"
           headingClassName="font-semibold"
         />
-
         {featuredCategories.length > 0 && (
           <FeaturedCategories categories={featuredCategories} />
         )}
