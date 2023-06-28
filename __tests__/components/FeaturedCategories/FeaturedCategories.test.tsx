@@ -6,7 +6,7 @@ import "@testing-library/jest-dom";
 import { FeaturedCategories } from "@/components/FeaturedCategories/FeaturedCategories";
 import { CategoryCardProps } from "@/components/common/Card/CategoryCard";
 
-describe("FeaturedCreators", () => {
+describe("FeaturedCategories", () => {
   const categories: CategoryCardProps[] = [
     {
       id: 1,

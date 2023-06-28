@@ -26,14 +26,14 @@ export const CategoryCard = ({ id, title, image, icon }: CategoryCardProps) => {
           src={image}
           width={292}
           height={292}
-          alt={`${title}-category-image-${id}`}
+          alt={`category-image-${id}`}
         />
         <div className="absolute flex justify-center items-center top-0 h-2/3 w-full">
           <Image
             src={icon}
             width={112}
             height={112}
-            alt={`${title}-category-icon-${id}`}
+            alt={`category-icon-${id}`}
           />
         </div>
       </div>

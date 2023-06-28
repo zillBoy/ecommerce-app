@@ -20,6 +20,7 @@ export const FeaturedCategories = ({ categories }: FeaturedCategoriesProps) => {
       {categories.map((category) => (
         <CategoryCard
           key={category.id}
+          id={category.id}
           image={category.image}
           title={category.title}
           icon={category.icon}
