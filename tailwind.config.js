@@ -29,6 +29,8 @@ module.exports = {
         neutralDark: "#121212",
         lightGray: "#858584",
         gray: "#b0b0b0",
+        darkGray: "#3B3B3B",
+        darkerGray: "#2B2B2B",
       },
       borderColor: {
         primary: "#A259FF",
@@ -36,6 +38,8 @@ module.exports = {
         secondary: "#321C4F",
         neutralDark: "#121212",
         gray: "#b0b0b0",
+        darkGray: "#3B3B3B",
+        darkerGray: "#2B2B2B",
       },
       fontSize: {
         "1.5xl": "22px",
@@ -68,6 +72,7 @@ module.exports = {
       height: {
         100: "400px",
         140: "560px",
+        "40vh": "40vh",
       },
       minHeight: {
         100: "400px",
