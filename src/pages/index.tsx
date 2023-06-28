@@ -1,5 +1,5 @@
 // React Dependencies
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 // External Dependencies
 import axios from "axios";
@@ -11,10 +11,17 @@ import { PartnerSection } from "@/components/Section/PartnerSection";
 import { ContentSection } from "@/components/Section/ContentSection";
 import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
 import { FeaturedCreators } from "@/components/FeaturedCreators/FeaturedCreators";
+import { FeaturedCategories } from "@/components/FeaturedCategories/FeaturedCategories";
+
+import { CategoryCardProps } from "@/components/common/Card/CategoryCard";
+import { categories } from "@/constants/data";
 
 const HomePage = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
   const [featuredCreators, setFeaturedCreators] = useState([]);
+  const [featuredCategories, setFeaturedCategories] = useState<
+    CategoryCardProps[]
+  >([]);
 
   const fetchFeaturedProducts = async () => {
     try {
@@ -36,10 +43,17 @@ const HomePage = () => {
     }
   };
 
-  useEffect(() => {
+  const getData = useCallback(() => {
     fetchFeaturedProducts();
     fetchFeaturedCreators();
+
+    // Featured Categories
+    setFeaturedCategories(categories);
   }, []);
+
+  useEffect(() => {
+    getData();
+  }, [getData]);
 
   return (
     <div>
@@ -69,6 +83,18 @@ const HomePage = () => {
         />
         {featuredCreators.length > 0 && (
           <FeaturedCreators creators={featuredCreators} />
+        )}
+
+        <ContentSection
+          role="categoriesSection"
+          heading="Categories"
+          className="mt-40"
+          headingVariant="heading"
+          headingClassName="font-semibold"
+        />
+
+        {featuredCategories.length > 0 && (
+          <FeaturedCategories categories={featuredCategories} />
         )}
       </div>
     </div>
