@@ -14,8 +14,8 @@ export type FeaturedCreatorsProps = {
 export const FeaturedCreators = ({ creators }: FeaturedCreatorsProps) => {
   return (
     <div
-      role="featured-products"
-      className="flex flex-col flex-wrap items-start justify-center md:flex-row md:justify-between"
+      role="featured-creators"
+      className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
     >
       {creators.map((creator, index) => (
         <CreatorCard

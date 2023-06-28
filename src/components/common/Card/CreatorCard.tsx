@@ -15,7 +15,7 @@ export type CreatorCardProps = {
   name: string;
   image: string;
   totalSales: number;
-  cardNum: number;
+  cardNum?: number;
 };
 
 export const CreatorCard = ({
@@ -28,7 +28,7 @@ export const CreatorCard = ({
   return (
     <div
       role="creator-card"
-      className="relative p-6 rounded-lg max-w-73 bg-darkGray"
+      className="relative p-6 rounded-lg max-w-73 bg-darkGray min-w-full"
     >
       <p className="inline-block w-6 text-center rounded-full bg-darkerGray text-lightGray">
         {cardNum}
@@ -43,13 +43,13 @@ export const CreatorCard = ({
 
       <div className="mt-6 mb-4">
         <Typography
-          className="text-center"
+          className="text-center capitalize"
           color="white"
           text={name}
           variant="mainSubParagraph"
         />
 
-        <div className="flex justify-center gap-1">
+        <div className="flex justify-center gap-1 flex-wrap">
           <Typography
             className="font-normal text-center"
             color="lightGray"

@@ -10,7 +10,7 @@ import { HeroSection } from "@/components/Section/HeroSection";
 import { PartnerSection } from "@/components/Section/PartnerSection";
 import { ContentSection } from "@/components/Section/ContentSection";
 import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
-import { CreatorCard } from "@/components/common/Card/CreatorCard";
+import { FeaturedCreators } from "@/components/FeaturedCreators/FeaturedCreators";
 
 const HomePage = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
@@ -29,7 +29,8 @@ const HomePage = () => {
   const fetchFeaturedCreators = async () => {
     try {
       const response = await axios("/api/featuredCreators");
-      const {} = response.data;
+      const { creators } = response.data;
+      setFeaturedCreators(creators);
     } catch (err) {
       console.log(err);
     }
@@ -37,6 +38,7 @@ const HomePage = () => {
 
   useEffect(() => {
     fetchFeaturedProducts();
+    fetchFeaturedCreators();
   }, []);
 
   return (
@@ -65,12 +67,9 @@ const HomePage = () => {
           headingClassName="font-semibold"
           btnText="View Rankings"
         />
-        <CreatorCard
-          image="/assets/images/creator-image-1.png"
-          name="Keepitreal"
-          totalSales={34500}
-          cardNum={1}
-        />
+        {featuredCreators.length > 0 && (
+          <FeaturedCreators creators={featuredCreators} />
+        )}
       </div>
     </div>
   );
