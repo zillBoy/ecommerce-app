@@ -10,9 +10,11 @@ import { HeroSection } from "@/components/Section/HeroSection";
 import { PartnerSection } from "@/components/Section/PartnerSection";
 import { ContentSection } from "@/components/Section/ContentSection";
 import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
+import { FeaturedCreators } from "@/components/FeaturedCreators/FeaturedCreators";
 
 const HomePage = () => {
   const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [featuredCreators, setFeaturedCreators] = useState([]);
 
   const fetchFeaturedProducts = async () => {
     try {
@@ -24,8 +26,19 @@ const HomePage = () => {
     }
   };
 
+  const fetchFeaturedCreators = async () => {
+    try {
+      const response = await axios("/api/featuredCreators");
+      const { creators } = response.data;
+      setFeaturedCreators(creators);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     fetchFeaturedProducts();
+    fetchFeaturedCreators();
   }, []);
 
   return (
@@ -49,11 +62,14 @@ const HomePage = () => {
           role="topCreatorsSection"
           heading="Top creators"
           paragraph="Checkout Top Rated Creators on the NFT Marketplace"
-          className="items-end justify-between mt-40"
+          className="flex-wrap items-end justify-between mt-40"
           headingVariant="heading"
           headingClassName="font-semibold"
           btnText="View Rankings"
         />
+        {featuredCreators.length > 0 && (
+          <FeaturedCreators creators={featuredCreators} />
+        )}
       </div>
     </div>
   );

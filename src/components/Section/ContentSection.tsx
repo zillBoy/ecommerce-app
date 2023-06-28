@@ -47,7 +47,9 @@ export const ContentSection = ({
         />
       </div>
 
-      <div className={btnText.length === 0 ? "hidden" : "block"}>
+      <div
+        className={`${btnText.length === 0 ? "hidden" : "block my-4 md:my-0"}`}
+      >
         <Button
           text={btnText}
           variant="outline"

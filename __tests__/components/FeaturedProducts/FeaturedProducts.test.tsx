@@ -1,6 +1,8 @@
 // External Dependencies
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
+
+// Internal Dependencies
 import { FeaturedProducts } from "@/components/FeaturedProducts/FeaturedProducts";
 
 describe("FeaturedProducts", () => {

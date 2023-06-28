@@ -30,7 +30,6 @@ export const ProductCard = ({
     <div
       role="product-card"
       className="relative block w-full mb-4 rounded-2xl lg:w-100 2xl:w-1/3.5"
-      // max-2xl:w-
     >
       <div className="relative">
         <Image
