@@ -10,7 +10,7 @@ import { Button } from "../common/Button/Button";
 type Props = {
   role: string;
   heading: string;
-  paragraph: string;
+  paragraph?: string;
   btnText?: string;
   className?: string;
   headingClassName?: string;
@@ -20,7 +20,7 @@ type Props = {
 export const ContentSection = ({
   role,
   heading,
-  paragraph,
+  paragraph = "",
   className = "",
   headingClassName = "",
   headingVariant,
