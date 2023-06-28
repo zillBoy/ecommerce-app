@@ -48,8 +48,13 @@ describe("Home", () => {
     expect(featuredCreators).toHaveLength(5);
   });
 
+  it("displays the FeaturedCategories component inside home-page", async () => {
+    render(<HomePage />);
+    const featuredCategories = await screen.findAllByRole("category-card");
+    expect(featuredCategories).toHaveLength(8);
+  });
+
   // 7. Section with text-content on left-side and images on the right-side
-  // 8. Categories showing
   // 9. Digital art trending section
   // 10. Section with 3 bottom-cards
   // 11. Subscribe for email
